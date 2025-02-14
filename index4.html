@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -676,8 +677,149 @@
             100% { background-position-x: 1000px; }
         }
 
+/* Why Choose Us Section */
+#why-choose-us {
+    padding: 60px 30px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.choose-us-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.choose-item {
+    background-color: #252525;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choose-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.choose-icon {
+    font-size: 2.5rem;
+    color: #bb86fc;
+}
+
+.choose-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.choose-description {
+    color: #d3d3d3;
+}
+
+/* FAQ Section */
+#faq {
+    padding: 60px 30px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    background-color: #252525;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.faq-question:hover {
+    background-color: #333333;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    color: #d3d3d3;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
 
     </style>
+
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes Indian Prime Hosting special?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide high-quality hosting services with top-tier hardware, low latency, and responsive support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer refunds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer a 3-day money-back guarantee if you're not satisfied with our services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment methods do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept UPI payment method."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to set up my server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once payment is confirmed, your server is deployed instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I upgrade my plan later?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can upgrade your plan at any time to accommodate your needs."
+          }
+        }
+      ]
+    }
+    </script>
+    
 </head>
 <body>
 
@@ -754,6 +896,68 @@
     </div>
 </section>
 
+
+<!-- Why Choose Us Section -->
+<section id="why-choose-us" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <div class="choose-us-grid">
+        <div class="choose-item" data-aos="fade-right">
+            <i class="choose-icon">⚡</i>
+            <h3 class="choose-title">High Performance</h3>
+            <p class="choose-description">We offer top-tier hardware for unmatched speed and reliability.</p>
+        </div>
+        <div class="choose-item" data-aos="fade-up">
+            <i class="choose-icon">💲</i>
+            <h3 class="choose-title">Affordable Pricing</h3>
+            <p class="choose-description">Get premium features without breaking the bank.</p>
+        </div>
+        <div class="choose-item" data-aos="fade-left">
+            <i class="choose-icon">📞</i>
+            <h3 class="choose-title">24/7 Support</h3>
+            <p class="choose-description">Our team is always available to help with any issues.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question">What makes Indian Prime Hosting special?</button>
+            <div class="faq-answer">
+                <p>We provide high-quality hosting services with top-tier hardware, low latency, and responsive support.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Do you offer refunds?</button>
+            <div class="faq-answer">
+                <p>Yes, we offer a 3-day money-back guarantee if you're not satisfied with our services.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What payment methods do you accept?</button>
+            <div class="faq-answer">
+                <p>We accept UPI payment method.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How long does it take to set up my server?</button>
+            <div class="faq-answer">
+                <p>Once payment is confirmed, your server is deployed instantly.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Can I upgrade my plan later?</button>
+            <div class="faq-answer">
+                <p>Yes, you can upgrade your plan at any time to accommodate your needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
     <centre>
     <section id="team-section" data-aos="fade-up" data-aos-duration="1000">
 
@@ -812,6 +1016,21 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+    
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+    
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+    
     <script>
         AOS.init(); // Initialize Aos Animations
 
