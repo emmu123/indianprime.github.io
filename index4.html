@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indian Prime Hosting | Affordable Minecraft & Discord Bot Hosting</title>
+
+    <meta name="description" content="Indian Prime Hosting offers affordable and reliable hosting for Minecraft servers, Discord bots, and more. Enjoy premium features, 24/7 support, and top-tier hardware at unbeatable prices.">
+
+  <meta name="keywords" content="game hosting, gaming server hosting, best game hosting, dedicated game servers, cheap game servers, VPS game hosting, high-performance game hosting, Minecraft server hosting, best Minecraft hosting, cheap Minecraft hosting, lag-free Minecraft servers, premium Minecraft hosting, modded Minecraft server, Bukkit hosting, Spigot hosting, Discord bot hosting, best Discord bot hosting, cheap Discord bot hosting, reliable Discord bot servers, Discord bot VPS, Python bot hosting, Node.js bot hosting, cloud hosting, VPS hosting, dedicated server hosting, managed game servers, SSD game hosting, affordable VPS hosting, fast server hosting, Indian hosting company, India-based game servers, Indian cloud hosting, Indian VPS, Indian gaming servers, low-cost hosting India">
+
+
+    <meta name="author" content="Indian Prime Hosting">
+
+    <link rel="icon" href="/l.png" type="image/x-icon">
+    <meta property="og:title" content="Indian Prime Hosting | Affordable Minecraft & Discord Bot Hosting">
+    <meta property="og:description" content="Powerful, budget-friendly hosting for Minecraft servers, Discord bots, and more. Get premium features, 24/7 support, and high-performance hardware.">
+    <meta property="og:image" content="/l.png">
+    <meta property="og:url" content="https://indianprime.online">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Indian Prime Hosting | Affordable Minecraft & Discord Bot Hosting">
+    <meta name="twitter:description" content="Reliable, budget-friendly hosting with premium features and 24/7 support.">
+    <meta name="twitter:image" content="/l.png">
+    <link rel="canonical" href="https://indianprime.online">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Basic Reset & General Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex; /* Make body a flex container */
+            flex-direction: column; /* Stack elements vertically */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+        }
+
+        /* Let the sections take up the available space to push footer down */
+        #hero,
+        #features,
+        #services,
+        #team-section,
+        #contact {
+            flex: 1; /* Allow sections to grow and take available space */
+        }
+
+
+        a {
+            text-decoration: none;
+            color: #bb86fc;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background-color: #1e1e1e;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            data-aos-anchor-placement: top-bottom;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            padding: 80px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: heroTitleAnimation 1.5s ease-out;
+        }
+
+        .hero-description {
+            font-size: 1.2rem; /* Slightly increased font size for better readability */
+            color: #e0e0e0; /* Lighter text color for better contrast */
+            margin-bottom: 30px;
+            animation: heroDescriptionAnimation 1.5s ease-out 0.5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            line-height: 1.8; /* Increased line height for better readability */
+            font-weight: 400; /* Adjusted font weight for a softer look */
+            letter-spacing: 0.01em; /* Slight letter spacing for modern feel */
+        }
+
+        .hero-description.animate {
+            opacity: 1;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: #bb86fc;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .hero-button:hover {
+            background-color: #9c6de2;
+        }
+
+        .hero-button:active {
+            transform: scale(1.05);
+        }
+
+
+        /* Features Section */
+        #features {
+            padding: 60px 30px;
+            background-color: #1a1a1a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background-color: #252525;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            background-color: #2f2f2f;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #bb86fc;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .feature-item:hover .feature-icon {
+            transform: scale(1.2);
+        }
+
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: #d3d3d3;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 60px 30px;
+            background-color: #1e1e1e;
+            text-align: center;
+        }
+
+        .services-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .services-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background-color: #252525;
+            color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            position: relative; /* For dropdown positioning */
+        }
+
+        .service-item:hover {
+            background-color: #333333;
+        }
+
+        .service-item.clicked {
+            transform: scale(0.95);
+            background-color: #3a3a3a;
+        }
+
+        /* Price Dropdown Styles (Now Slide Animation) */
+        .price-dropdown.plan-details {
+            position: absolute; /* Keep absolute positioning */
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            overflow: hidden;
+            margin-top: 5px;
+            max-width: 400px;
+            text-align: left;
+            z-index: 10;
+
+            max-height: 0; /* Initially hidden for slide down */
+            overflow: hidden; /* Clip overflowing content */
+            transition: max-height 0.4s ease-out; /* Transition for slide down effect */
+        }
+
+        .service-item.active .price-dropdown.plan-details {
+            max-height: 800px; /* Adjust max-height as needed for content */
+             /* We use max-height transition for slide-down */
+        }
+
+
+        .dropdown-content {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .dropdown-content:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-plan-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .dropdown-features-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .dropdown-features-list li {
+            margin-bottom: 8px;
+            color: #d3d3d3;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-features-list li i {
+            margin-right: 8px;
+            color: #bb86fc;
+        }
+
+
+        .dropdown-price {
+            color: #bb86fc;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .dropdown-button {
+            display: block;
+            width: auto;
+            margin: 0 auto;
+            background-color: #bb86fc;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .dropdown-button:hover {
+            background-color: #9c6de2;
+        }
+
+        .dropdown-button:active {
+            transform: scale(0.95);
+        }
+
+
+        /* Contact Section */
+        #contact {
+            padding: 80px 30px;
+            background-color: #1a1a1a;
+            text-align: center;
+        }
+
+
+         /* ... (other styles remain the same) ... */
+
+         .plan-details-embed .dropdown-content {
+            display: flex; /* Make content horizontal */
+            align-items: center; /* Vertically align items */
+            justify-content: space-between; /* Distribute space between items */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .dropdown-plan-title {
+            flex-basis: 100%; /* Make title take full width */
+            text-align: center; /* Center the title */
+            margin-bottom: 10px; /* Add some bottom margin */
+        }
+
+        .dropdown-features-list {
+            flex-basis: 50%; /* Make features list take 50% width */
+            margin-bottom: 0; /* Remove bottom margin */
+        }
+
+        .dropdown-price {
+            flex-basis: 25%; /* Make price take 25% width */
+            text-align: right; /* Align price to the right */
+            margin-right: 10px;
+        }
+
+        .dropdown-button {
+            flex-basis: 25%; /* Make button take 25% width */
+        }
+        .plan-details-embed .dropdown-content{
+            flex-direction: row;
+        }
+        .plan-details-embed .dropdown-content .dropdown-features-list{
+            margin-bottom:0;
+        }
+        .plan-details-embed .dropdown-content .dropdown-features-list li{
+            display:flex;
+            align-items:center;
+        }
+
+
+        .services-list {
+            display: flex;
+            justify-content: center; /* Center the items horizontally */
+            gap: 40px; /* Adjust gap between items */
+            margin-bottom: 40px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .service-item {
+            /* ... (other styles remain the same) ... */
+            flex: 1; /* Distribute available space equally */
+            max-width: 45%; /* Set a maximum width for each item */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .plan-details-embed {
+            /* ... (other styles remain the same) ... */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-details-embed .dropdown-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            background-color: #252525;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.03);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #bb86fc;
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-description {
+            color: #d3d3d3;
+            margin-bottom: 25px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: #bb86fc;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #9c6de2;
+        }
+
+        .contact-button:active {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            color: #d3d3d3;
+            font-size: 0.9rem;
+            margin-top: auto; /* Push footer to the bottom of the flex container */
+        }
+
+        /* Animations Keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroTitleAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes heroDescriptionAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* --- New Styles for Team Section --- */
+        #team-section {
+            padding: 60px 30px;
+            background-color: #252525; /* Slightly darker background for distinction */
+            text-align: center;
+            overflow: hidden; /* To contain the carousel */
+        }
+
+        .team-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .team-carousel {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scroll for carousel effect */
+            scroll-snap-type: x mandatory; /* Enable scroll snapping for profile items */
+            gap: 20px; /* Spacing between profile items */
+            padding-bottom: 20px; /* Space for scrollbar if needed */
+            -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+            max-width: 820px; /* NEW: Maximum width to show 3 profiles at a time (adjust if needed based on profile width and gaps) */
+            margin: 0 auto; /* Center the carousel */
+        }
+
+        .team-carousel::-webkit-scrollbar {
+            height: 8px; /* Adjust scrollbar height */
+        }
+
+        .team-carousel::-webkit-scrollbar-track {
+            background: #333; /* Scrollbar track color */
+            border-radius: 4px;
+        }
+
+        .team-carousel::-webkit-scrollbar-thumb {
+            background: #555; /* Scrollbar thumb color */
+            border-radius: 4px;
+        }
+
+
+        .team-profile {
+            background-color: #2e2e2e;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            min-width: 250px; /* Minimum width for each profile */
+            scroll-snap-align: start; /* Snap profile to start of container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex: 0 0 auto; /* NEW: Prevent profile items from shrinking and allow width control */
+            width: 250px; /* NEW: Set explicit width of each profile item */
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Profile transition */
+        }
+
+        .team-carousel:hover .team-profile { /* Scale effect on carousel hover */
+            transform: scale(0.95);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-profile:hover {
+            transform: scale(1.02) translateY(-3px); /* Profile hover effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #444; /* Placeholder background */
+            margin: 0 auto 15px;
+            overflow: hidden; /* Clip image to circle */
+            transition: border-radius 0.4s ease; /* Image hover effect */
+        }
+
+        .team-profile:hover .team-profile-image {
+            border-radius: 15%; /* Slightly change shape on hover */
+        }
+
+        .team-profile-image img {
+            display: block; /* Remove bottom gap under image */
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover circle area, may crop image */
+        }
+
+
+        .team-profile-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .team-profile-role {
+            color: #d3d3d3;
+            font-size: 0.9rem;
+        }
+
+
+        /* Dots for navigation if needed */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #777;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #bb86fc;
+        }
+
+        /* Wave effect for Hero Section */
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px; /* Adjust wave height */
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0 L0,100 C150,80 350,20 500,50 C650,80 850,80 1000,50 L1000,0 Z" style="fill:%231a1a1a;" /></svg>') repeat-x bottom; /* Match features section background */
+            background-size: 1000px 100px;
+            animation: wave 3s linear infinite; /* Wave animation */
+        }
+
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1000px; }
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header data-aos="fade-down" data-aos-duration="1000">
+        <div class="logo-container">
+            <img src="/l.png" alt="Indian Prime Hosting Logo">
+            <span class="logo-text">Indian Prime Hosting</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#team-section">About us</a></li>
+                <li><a href="https://dsc.gg/indianprimehosting">Discord</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" data-aos="fade-in" data-aos-duration="1200">
+        <div class="hero-content">
+            <h1 class="hero-title">GREAT SERVERS START HERE</h1>
+            <p class="hero-description">Wanting a better hosting solution? We offer premium features and support, while still maintaining cheap prices and reliable hardware.</p>
+        </div>
+    </section>
+
+    <section id="features" data-aos="fade-up" data-aos-duration="1000">
+        <div class="features-grid">
+            <div class="feature-item" data-aos="fade-right" data-aos-duration="1000">
+                <i class="feature-icon">🛡️</i>
+                <h3 class="feature-title">Easy Management</h3>
+                <p class="feature-description">Manage your hosting services with our intuitive and user-friendly panel. Simplified control at your fingertips.</p>
+            </div>
+            <div class="feature-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <i class="feature-icon">💰</i>
+                <h3 class="feature-title">Low Cost</h3>
+                <p class="feature-description">Get premium hosting features without breaking the bank. Affordable hosting solutions for everyone.</p>
+            </div>
+            <div class="feature-item" data-aos="fade-left" data-aos-duration="1000">
+                <i class="feature-icon">⏱️</i>
+                <h3 class="feature-title">24/7 Services</h3>
+                <p class="feature-description">We are always here for you, providing round-the-clock support and ensuring service availability, always.</p>
+            </div>
+        </div>
+    </section>
+    <section id="services" data-aos="fade-down" data-aos-duration="1000">
+    <div class="services-list">
+            <div class="service-item service-clickable" data-service="minecraft" data-aos="zoom-in" data-aos-duration="1000">
+                Minecraft Hosting
+                <div class="plan-details-embed">
+                    <div class="dropdown-content">
+                        <h4 class="dropdown-plan-title">Basic Plan</h4>
+                        <ul class="dropdown-features-list">
+                            <li><i class="fas fa-check-circle"></i> 2 GB RAM</li>
+                            <li><i class="fas fa-check-circle"></i> Unlimited SSD Storage</li>
+                            <li><i class="fas fa-check-circle"></i> Standard Support</li>
+                        </ul>
+                        <span class="dropdown-price">$5/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                    </div>
+                    </div>
+            </div>
+        <div class="service-item service-clickable" data-service="discordbot" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                Discord Bot Hosting
+                <div class="plan-details-embed">
+                    <div class="dropdown-content">
+                        <h4 class="dropdown-plan-title">Starter Bot Plan</h4>
+                        <ul class="dropdown-features-list">
+                            <li><i class="fas fa-check-circle"></i> 1 GB RAM</li>
+                            <li><i class="fas fa-check-circle"></i> 5 GB SSD Storage</li>
+                            <li><i class="fas fa-check-circle"></i> Basic Monitoring</li>
+                        </ul>
+                        <span class="dropdown-price">$3/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                    </div>
+                    </div>
+            </div>
+    </div>
+</section>
+
+    <centre>
+    <section id="team-section" data-aos="fade-up" data-aos-duration="1000">
+
+        <h2 class="team-title" data-aos="fade-down" data-aos-delay="200">Our Team</h2>
+        <div class="team-carousel">
+            <div class="team-profile" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="team-profile-image">
+                    <img src="https://images-ext-1.discordapp.net/external/neoP_DuuOrBIw3gVsv8A4UnxOVYjo92Vnc-JX1xI4k4/%3Fsize%3D4096%26ignore%3Dtrue%29./https/cdn.discordapp.com/avatars/858265153576894494/33db37b35f45105d3021b0dfb119af2b.png?format=webp&quality=lossless&width=571&height=571" alt="l6dive#0000 - CEO"> </div>
+                <h3 class="team-profile-name">l6dive#0000</h3>
+                <p class="team-profile-role">CEO</p>
+            </div>
+            <div class="team-profile" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <div class="team-profile-image">
+                    <img src="https://images-ext-1.discordapp.net/external/THtR1eAInnMHChTL27C25hwTKdYlH8zSA99WpGqyDY0/%3Fsize%3D4096%26ignore%3Dtrue%29./https/cdn.discordapp.com/avatars/733008863913181305/830124a39dbdc5a45a14d099e93029b6.png?format=webp&quality=lossless&width=320&height=320" alt="SHAZ#0000 - FOUNDER"> </div>
+                <h3 class="team-profile-name">SHAZ#0000</h3>
+                <p class="team-profile-role">FOUNDER</p>
+            </div>
+            <div class="team-profile" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                <div class="team-profile-image">
+                    <img src="https://images-ext-1.discordapp.net/external/tenGC0WzzEXqIpx7nX89r374mUzoysVrju3uikT0e68/%3Fsize%3D4096%26ignore%3Dtrue%29./https/cdn.discordapp.com/avatars/863271170228486187/c864fe93b8c100379075762215cb4898.png?format=webp&quality=lossless&width=375&height=375" alt="EMMU#0000 - ADMINISTRATOR"> </div>
+                <h3 class="team-profile-name">EMMU#0000</h3>
+                <p class="team-profile-role">ADMINISTRATOR</p>
+            </div>
+
+    </section>
+</centre>
+
+
+    <section id="contact" data-aos="fade-up" data-aos-duration="1000">
+        <div class="contact-grid">
+            <div class="contact-item" data-aos="fade-right" data-aos-duration="1000">
+                <i class="contact-icon">💬</i>
+                <h3 class="contact-title">Want more?</h3>
+                <p class="contact-description">Join our Discord community to get more info and connect with other users.</p>
+                <a href="https://dsc.gg/indianprimehosting" class="contact-button">Join Discord</a>
+                <p class="contact-description">Get more info from there</p>
+            </div>
+            <div class="contact-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <i class="contact-icon">🗣️</i>
+                <h3 class="contact-title">Talk to Us</h3>
+                <p class="contact-description">You can contact us using Discord or mail for support or inquiries.</p>
+                <p class="contact-description">Mail: support@indianprime.online</p>
+                <p class="contact-description">Discord: <a href="https://dsc.gg/indianprimehosting">https://dsc.gg/indianprimehosting</a></p>
+            </div>
+            <div class="contact-item" data-aos="fade-left" data-aos-duration="1000">
+                <i class="contact-icon">🔗</i>
+                <h3 class="contact-title">Stay in Touch</h3>
+                <p class="contact-description">Join our Discord server to stay updated and in touch with our community and updates.</p>
+                <a href="https://dsc.gg/indianprimehosting" class="contact-button">Join Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 <a href="https://indianprime.in">Indian Prime Hosting</a>. All rights reserved.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); // Initialize Aos Animations
+
+        // Animate hero description on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroDescription = document.querySelector('.hero-description');
+            heroDescription.classList.add('animate');
+        });
+
+        // Price Dropdown Functionality (Now Slide Animation)
+        const serviceItems = document.querySelectorAll('.service-clickable');
+
+        serviceItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.stopPropagation();
+                const serviceItem = this;
+
+                // Close other open plan details
+                serviceItems.forEach(otherItem => {
+                    if (otherItem !== serviceItem && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle current plan details slide
+                serviceItem.classList.toggle('active');
+            });
+        });
+
+        // Close plan details when clicking outside of service item
+        window.addEventListener('click', function(event) {
+            if (!event.target.closest('.service-item')) {
+                serviceItems.forEach(item => {
+                    if (item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+
+        // --- New JavaScript for Team Carousel Auto-Swipe ---
+        const teamCarousel = document.querySelector('.team-carousel');
+        let scrollPosition = 0;
+        const profileWidth = 270;
+        const totalProfiles = document.querySelectorAll('.team-profile').length;
+        let currentProfileIndex = 0;
+        const profilesPerSlide = 3;
+
+        function autoSwipeCarousel() {
+            currentProfileIndex = (currentProfileIndex + profilesPerSlide) % totalProfiles;
+             // Calculate scroll position to center the *start* of the profile group.
+            scrollPosition = currentProfileIndex * profileWidth;
+
+            teamCarousel.scroll({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        setInterval(autoSwipeCarousel, 3000); // Swipe every 3 seconds
+
+
+    </script>
+
+</body>
+</html>
