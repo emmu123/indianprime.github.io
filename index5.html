@@ -1190,8 +1190,11 @@
     </script>
 
 
+
     <!-- Chat Widget Button -->
-    <button id="chat-open-btn" class="chat-button">💬 AI Support</button>
+    <button id="chat-open-btn" class="chat-button">
+        💬 AI Support
+    </button>
 
     <!-- Chat Widget -->
     <div id="chat-widget" class="chat-popup">
@@ -1203,125 +1206,91 @@
             <!-- Messages will appear here -->
         </div>
         <div class="chat-footer">
-            <input type="text" id="chat-input" class="chat-input" placeholder="Type your message...">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Type your message..." />
             <button id="send-btn" class="send-button">Send</button>
         </div>
     </div>
-
 <script>
-       document.addEventListener("DOMContentLoaded", () => {
-            const chatWidget = document.getElementById("chat-widget");
-            const chatOpenBtn = document.getElementById("chat-open-btn");
-            const chatCloseBtn = document.getElementById("chat-close-btn");
-            const chatInput = document.getElementById("chat-input");
-            const chatBody = document.getElementById("chat-body");
-            const sendBtn = document.getElementById("send-btn");
+    document.addEventListener("DOMContentLoaded", () => {
+    const chatWidget = document.getElementById("chat-widget");
+    const chatOpenBtn = document.getElementById("chat-open-btn");
+    const chatCloseBtn = document.getElementById("chat-close-btn");
+    const chatInput = document.getElementById("chat-input");
+    const chatBody = document.getElementById("chat-body");
+    const sendBtn = document.getElementById("send-btn");
 
-            // Function to open the chat widget
-            const openChat = () => {
-                chatWidget.classList.add("show");
-            };
+    if (!chatWidget || !chatOpenBtn || !chatCloseBtn || !chatInput || !chatBody || !sendBtn) {
+        console.error("One or more chat elements are missing.");
+        return;
+    }
 
-            // Function to close the chat widget with animation
-            const closeChat = () => {
-                // Animate the close button
-                chatCloseBtn.classList.add("animate");
+    // Open Chat (fade-in effect)
+    chatOpenBtn.addEventListener("click", () => {
+        chatWidget.classList.add("show");
+    });
 
-                // Remove the 'show' class after the animation duration
-                setTimeout(() => {
-                    chatWidget.classList.remove("show");
-                    chatCloseBtn.classList.remove("animate");
-                }, 300); // Match this duration with the CSS animation duration
-            };
+    // Close Chat (fade-out effect)
+    chatCloseBtn.addEventListener("click", () => {
+        chatWidget.classList.remove("show");
+    });
 
-            // Open the chat widget with fade-up animation
-            chatOpenBtn.addEventListener("click", openChat);
+    // Send message on button click
+    sendBtn.addEventListener("click", sendMessage);
 
-            // Close the chat widget with fade-down animation
-            chatCloseBtn.addEventListener("click", closeChat);
+    // Send message on Enter key press
+    chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+    });
 
-            // Send message on button click
-            sendBtn.addEventListener("click", () => {
-                sendMessage();
-            });
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
 
-            // Send message on Enter key press
-            chatInput.addEventListener("keypress", (e) => {
-                if (e.key === "Enter") {
-                    sendMessage();
-                }
-            });
+        // Add user message
+        appendMessage(message, "user-message");
 
-            function sendMessage() {
-                const message = chatInput.value.trim();
-                if (message) {
-                    // Add user message to the chat body
-                    const messageElement = document.createElement("div");
-                    messageElement.textContent = message;
-                    messageElement.className = "user-message";
-                    chatBody.appendChild(messageElement);
+        // Clear input
+        chatInput.value = "";
 
-                    // Scroll to the bottom
-                    chatBody.scrollTop = chatBody.scrollHeight;
+        // Typing indicator
+        const typingIndicator = document.createElement("div");
+        typingIndicator.className = "typing-indicator";
+        typingIndicator.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+        chatBody.appendChild(typingIndicator);
+        chatBody.scrollTop = chatBody.scrollHeight;
 
-                    // Clear input
-                    chatInput.value = "";
+        // Send message to API
+        fetch("https://free-ai.xyz/iph-response", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            chatBody.removeChild(typingIndicator);
 
-                    // Add typing indicator
-                    const typingIndicator = document.createElement("div");
-                    typingIndicator.className = "typing-indicator";
-                    typingIndicator.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
-                    chatBody.appendChild(typingIndicator);
-                    chatBody.scrollTop = chatBody.scrollHeight;
-
-                    // Send the message to the API and get the response
-                    fetch('https://free-ai.xyz/iph-response', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ message }),
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        // Remove typing indicator
-                        if (chatBody.contains(typingIndicator)) {
-                            chatBody.removeChild(typingIndicator);
-                        }
-
-                        // Display the support's response
-                        const supportReply = document.createElement("div");
-                        supportReply.textContent = data.response;
-                        supportReply.className = "support-message";
-                        chatBody.appendChild(supportReply);
-
-                        // Scroll to the bottom
-                        chatBody.scrollTop = chatBody.scrollHeight;
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        // Remove typing indicator
-                        if (chatBody.contains(typingIndicator)) {
-                            chatBody.removeChild(typingIndicator);
-                        }
-
-                        // Display error message
-                        const errorReply = document.createElement("div");
-                        errorReply.textContent = `Support: Sorry, something went wrong. Please try again later.`;
-                        errorReply.className = "support-message";
-                        chatBody.appendChild(errorReply);
-
-                        // Scroll to the bottom
-                        chatBody.scrollTop = chatBody.scrollHeight;
-                    });
-                }
+            if (data && data.response) {
+                appendMessage(data.response, "support-message");
+            } else {
+                appendMessage("Support: Sorry, I couldn't process your request.", "support-message");
             }
+        })
+        .catch(error => {
+            console.error("API error:", error);
+            chatBody.removeChild(typingIndicator);
+            appendMessage("Support: Sorry, something went wrong. Please try again later.", "support-message");
         });
+    }
+
+    function appendMessage(text, className) {
+        const messageElement = document.createElement("div");
+        messageElement.textContent = text;
+        messageElement.className = className;
+        chatBody.appendChild(messageElement);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+});
+
 </script>
     
     <script>
