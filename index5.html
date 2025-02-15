@@ -386,13 +386,17 @@
             margin-bottom: 40px;
         }
 
-        .services-list {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
+   .services-list {
+    display: grid;
+    grid-template-columns: 01fr; /* One column for vertical alignment */
+    justify-items: center; /* Centers the items */
+    gap: 20px; /* Adds spacing between sections */
+}
+
+.service-item {
+    width: 50%;
+    text-align: center;
+}
 
         .service-item {
             background-color: #252525;
@@ -424,7 +428,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             overflow: hidden;
             margin-top: 5px;
-            max-width: 400px;
+            max-width: auto;
             text-align: left;
             z-index: 10;
 
@@ -434,7 +438,7 @@
         }
 
         .service-item.active .price-dropdown.plan-details {
-            max-height: 800px; /* Adjust max-height as needed for content */
+            max-height: auto; /* Adjust max-height as needed for content */
              /* We use max-height transition for slide-down */
         }
 
@@ -1016,7 +1020,8 @@
             </div>
         </div>
     </section>
-    <section id="services" data-aos="fade-down" data-aos-duration="1000">
+    
+    <section id="pricing" data-aos="fade-down" data-aos-duration="1000">
     <div class="services-list">
             <div class="service-item service-clickable" data-service="minecraft" data-aos="zoom-in" data-aos-duration="1000">
                 Minecraft Hosting
@@ -1025,26 +1030,111 @@
                         <h4 class="dropdown-plan-title">Basic Plan</h4>
                         <ul class="dropdown-features-list">
                             <li><i class="fas fa-check-circle"></i> 2 GB RAM</li>
-                            <li><i class="fas fa-check-circle"></i> Unlimited SSD Storage</li>
-                            <li><i class="fas fa-check-circle"></i> Standard Support</li>
+                            <li><i class="fas fa-check-circle"></i> 10gb Storage</li>
+                            <li><i class="fas fa-check-circle"></i> 200% CPU</li>
                         </ul>
-                        <span class="dropdown-price">$5/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                        <span class="dropdown-price">₹148/month</span> <a href="#" class="dropdown-button">Order Now</a>
                     </div>
                     </div>
+
+                        <div class="plan-details-embed">
+                            <div class="dropdown-content">
+                                <h4 class="dropdown-plan-title">Explorer Plan</h4>
+                                <ul class="dropdown-features-list">
+                                    <li><i class="fas fa-check-circle"></i> 4 GB RAM</li>
+                                    <li><i class="fas fa-check-circle"></i> 15gb Storage</li>
+                                    <li><i class="fas fa-check-circle"></i> 300% CPU</li>
+                                </ul>
+                                <span class="dropdown-price">₹399/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                            </div>
+                            </div>
+                            <div class="plan-details-embed">
+                                <div class="dropdown-content">
+                                    <h4 class="dropdown-plan-title">Adventurer Plan</h4>
+                                    <ul class="dropdown-features-list">
+                                        <li><i class="fas fa-check-circle"></i> 6 GB RAM</li>
+                                        <li><i class="fas fa-check-circle"></i> 25gb Storage</li>
+                                        <li><i class="fas fa-check-circle"></i> 300% CPU</li>
+                                    </ul>
+                                    <span class="dropdown-price">₹545/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                                </div>
+                                </div>                      <div class="plan-details-embed">
+                                    <div class="dropdown-content">
+                                        <h4 class="dropdown-plan-title">Warrior Plan</h4>
+                                        <ul class="dropdown-features-list">
+                                            <li><i class="fas fa-check-circle"></i> 8 GB RAM</li>
+                                            <li><i class="fas fa-check-circle"></i> 30gb Storage</li>
+                                            <li><i class="fas fa-check-circle"></i> 400% CPU</li>
+                                        </ul>
+                                        <span class="dropdown-price">₹794/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                                    </div>
+                                    </div>                      <div class="plan-details-embed">
+                                        <div class="dropdown-content">
+                                            <h4 class="dropdown-plan-title">Champion Plan</h4>
+                                            <ul class="dropdown-features-list">
+                                                <li><i class="fas fa-check-circle"></i> 10 GB RAM</li>
+                                                <li><i class="fas fa-check-circle"></i> 35gb Storage</li>
+                                                <li><i class="fas fa-check-circle"></i> 500% CPU</li>
+                                            </ul>
+                                            <span class="dropdown-price">₹942/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                                        </div>
+                                        </div>    <div class="plan-details-embed">
+                                            <div class="dropdown-content">
+                                                <h4 class="dropdown-plan-title">Legend Plan</h4>
+                                                <ul class="dropdown-features-list">
+                                                    <li><i class="fas fa-check-circle"></i> 12 GB RAM</li>
+                                                    <li><i class="fas fa-check-circle"></i> 40gb Storage</li>
+                                                    <li><i class="fas fa-check-circle"></i> 500% CPU</li>
+                                                </ul>
+                                                <span class="dropdown-price">₹1091/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                                            </div>
+                                            </div>    <div class="plan-details-embed">
+                                                <div class="dropdown-content">
+                                                    <h4 class="dropdown-plan-title">Titan Plan</h4>
+                                                    <ul class="dropdown-features-list">
+                                                        <li><i class="fas fa-check-circle"></i> 16 GB RAM</li>
+                                                        <li><i class="fas fa-check-circle"></i> UNLIMITED Storage</li>
+                                                        <li><i class="fas fa-check-circle"></i> UNLIMITED CPU</li>
+                                                    </ul>
+                                                    <span class="dropdown-price">₹1488/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                                                </div>
+                                                </div>
+                   
             </div>
         <div class="service-item service-clickable" data-service="discordbot" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                 Discord Bot Hosting
                 <div class="plan-details-embed">
                     <div class="dropdown-content">
-                        <h4 class="dropdown-plan-title">Starter Bot Plan</h4>
+                        <h4 class="dropdown-plan-title">Coder Plan</h4>
                         <ul class="dropdown-features-list">
                             <li><i class="fas fa-check-circle"></i> 1 GB RAM</li>
                             <li><i class="fas fa-check-circle"></i> 5 GB SSD Storage</li>
-                            <li><i class="fas fa-check-circle"></i> Basic Monitoring</li>
+                            <li><i class="fas fa-check-circle"></i> 100% CPU</li>
                         </ul>
-                        <span class="dropdown-price">$3/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                        <span class="dropdown-price">₹109/month</span> <a href="#" class="dropdown-button">Order Now</a>
                     </div>
                     </div>
+                    <div class="plan-details-embed">
+                        <div class="dropdown-content">
+                            <h4 class="dropdown-plan-title">Developer Plan</h4>
+                            <ul class="dropdown-features-list">
+                                <li><i class="fas fa-check-circle"></i> 2 GB RAM</li>
+                                <li><i class="fas fa-check-circle"></i> 10 GB SSD Storage</li>
+                                <li><i class="fas fa-check-circle"></i>100% </li>
+                            </ul>
+                            <span class="dropdown-price">₹159/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                        </div>
+                        </div>                <div class="plan-details-embed">
+                            <div class="dropdown-content">
+                                <h4 class="dropdown-plan-title">Elite Plan</h4>
+                                <ul class="dropdown-features-list">
+                                    <li><i class="fas fa-check-circle"></i> UNLIMITED RAM</li>
+                                    <li><i class="fas fa-check-circle"></i>UNLIMITED Storage</li>
+                                    <li><i class="fas fa-check-circle"></i> UNLIMITED CPU</li>
+                                </ul>
+                                <span class="dropdown-price">₹229/month</span> <a href="#" class="dropdown-button">Order Now</a>
+                            </div>
+                            </div>
             </div>
     </div>
 </section>
@@ -1278,7 +1368,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     chatBody.scrollTop = chatBody.scrollHeight;
 
                     // Send the message to the API and get the response
-                    fetch('https://iph.free-ai.xyz/iph-response', {
+                    fetch('https://iph-ai.onrender.com/iph-response', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
